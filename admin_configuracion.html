@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Configuración</title>
+    <link rel="stylesheet" href="assets/css/styles.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo">TECH CHRONICLE</div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">BLOG</a></li>
+                <li><a href="tienda.html">TIENDA</a></li>
+                <li><a href="admin.html" class="active">ADMIN</a></li>
+            </ul>
+        </nav>
+        <div class="cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count">3</span>
+        </div>
+    </header>
+
+    <main class="admin-container">
+        <aside class="admin-sidebar">
+            <div class="user-info">
+                <h4><i class="fas fa-user-circle"></i> Administrador</h4>
+                <p>Bienvenido al Panel</p>
+            </div>
+            
+            <nav class="admin-nav-links">
+                <ul>
+                    <li><a href="admin.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a href="admin_post.html"><i class="fas fa-pencil-alt"></i> Gestión de Posts</a></li>
+                    <li><a href="admin_productos.html"><i class="fas fa-box"></i> Gestión de Productos</a></li>
+                    <li><a href="admin_usuarios.html"><i class="fas fa-users"></i> Gestión de Usuarios</a></li>
+                    <li><a href="admin_reportes.html"><i class="fas fa-chart-line"></i> Reportes y Stats</a></li>
+                    <li><a href="admin_configuracion.html" class="active"><i class="fas fa-cog"></i> Configuración</a></li>
+                </ul>
+            </nav>
+            <button class="logout-btn"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</button>
+        </aside>
+
+        <section class="admin-content-area">
+            <h1>Configuración del Sitio</h1>
+            
+            <div class="recent-tasks-box" style="padding: 30px;">
+                <form class="config-form">
+                    <div class="form-group">
+                        <label for="site-name">Nombre del Sitio</label>
+                        <input type="text" id="site-name" value="Tech Chronicle">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email-admin">Email de Contacto</label>
+                        <input type="email" id="email-admin" value="admin@techchronicle.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="maintenance">Modo Mantenimiento</label>
+                        <select id="maintenance">
+                            <option>Desactivado</option>
+                            <option>Activado</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="items-per-page">Ítems por Página (Blog)</label>
+                        <input type="number" id="items-per-page" value="10">
+                    </div>
+                    
+                    <button type="submit" class="save-button"><i class="fas fa-save"></i> Guardar Cambios</button>
+                </form>
+            </div>
+
+        </section>
+    </main>
+
+</body>
+</html>

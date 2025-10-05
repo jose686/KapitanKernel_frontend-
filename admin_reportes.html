@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Reportes y Stats</title>
+    <link rel="stylesheet" href="assets/css/styles.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo">TECH CHRONICLE</div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">BLOG</a></li>
+                <li><a href="tienda.html">TIENDA</a></li>
+                <li><a href="admin.html" class="active">ADMIN</a></li>
+            </ul>
+        </nav>
+        <div class="cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count">3</span>
+        </div>
+    </header>
+
+    <main class="admin-container">
+        <aside class="admin-sidebar">
+            <div class="user-info">
+                <h4><i class="fas fa-user-circle"></i> Administrador</h4>
+                <p>Bienvenido al Panel</p>
+            </div>
+            
+            <nav class="admin-nav-links">
+                <ul>
+                    <li><a href="admin.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a href="admin_post.html"><i class="fas fa-pencil-alt"></i> Gestión de Posts</a></li>
+                    <li><a href="admin_productos.html"><i class="fas fa-box"></i> Gestión de Productos</a></li>
+                    <li><a href="admin_usuarios.html"><i class="fas fa-users"></i> Gestión de Usuarios</a></li>
+                    <li><a href="admin_reportes.html" class="active"><i class="fas fa-chart-line"></i> Reportes y Stats</a></li>
+                    <li><a href="admin_configuracion.html"><i class="fas fa-cog"></i> Configuración</a></li>
+                </ul>
+            </nav>
+            <button class="logout-btn"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</button>
+        </aside>
+
+        <section class="admin-content-area">
+            <h1>Reportes de Rendimiento</h1>
+            
+            <div class="content-actions">
+                <select class="search-input" style="width: 200px; max-width: 100%;">
+                    <option>Seleccionar Periodo</option>
+                    <option>Últimos 7 días</option>
+                    <option>Últimos 30 días</option>
+                </select>
+                <button class="add-button"><i class="fas fa-download"></i> Exportar Datos</button>
+            </div>
+
+            <h2>Ventas Mensuales</h2>
+            <div class="recent-tasks-box" style="height: 300px; padding: 20px; text-align: center;">
+                <p style="color: #666; margin-top: 50px;">[Espacio para Gráfico de Líneas: Ventas vs. Tiempo]</p>
+                <div style="background-color: #f1f1f1; height: 150px; border-radius: 4px; border: 1px solid #ddd;"></div>
+            </div>
+
+            <h2 style="margin-top: 40px;">Tráfico del Blog</h2>
+            <div class="recent-tasks-box" style="height: 300px; padding: 20px; text-align: center;">
+                 <p style="color: #666; margin-top: 50px;">[Espacio para Gráfico de Barras: Visitas por Post]</p>
+                 <div style="background-color: #f1f1f1; height: 150px; border-radius: 4px; border: 1px solid #ddd;"></div>
+            </div>
+
+        </section>
+    </main>
+
+</body>
+</html>
