@@ -1,4 +1,4 @@
-// tiposUsuarioAPI.js
+
 
 import { BASE_API_URL } from './config.js'; 
 
@@ -21,6 +21,8 @@ export async function obtenerTodosLosTiposDeUsuario() {
 }
 
 
+
+
 export async function crearTipoUsuario(tipoUsuarioData) {
     try {
         const url = `${BASE_API_URL}/tiposUsuario`;
@@ -28,7 +30,7 @@ export async function crearTipoUsuario(tipoUsuarioData) {
         const response = await fetch(url, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(tipoUsuarioData)
+            body: JSON.stringify(tipoUsuarioData) 
         });
 
         if (!response.ok) {
@@ -36,7 +38,7 @@ export async function crearTipoUsuario(tipoUsuarioData) {
             throw new Error(`Error ${response.status}: No se pudo crear el rol. Detalle: ${errorText}`);
         }
 
-        return await response.json();
+        return await response.json(); 
     } catch (error) {
         console.error("Error en crearTipoUsuario:", error);
         throw error;
