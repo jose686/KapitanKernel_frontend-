@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Nuevo Usuario</title>
+    <link rel="stylesheet" href="assets/css/styles.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </head>
+<body style="padding-top: 50px;"> 
+    
+    <div class="admin-content-area" style="padding: 30px; margin: 0 auto; max-width: 600px;">
+        
+        <h1>Crear Nuevo Usuario</h1>
+        
+        <form id="registroForm" class="config-form" action="/api/usuarios" method="POST">
+
+    
+
+            <div class="form-group">
+                <label for="nombreUsuario">Nombre de Usuario</label>
+                <input type="text" id="nombreUsuario" name="nombreUsuario" required maxlength="50">
+            </div>
+
+            <div class="form-group">
+                <label for="correo">Correo Electrónico</label>
+                <input type="email" id="correo" name="correo" required maxlength="100">
+            </div>
+
+            <div class="form-group">
+                <label for="contrasena">Contraseña</label>
+                <input type="password" id="contrasena" name="contrasena" required minlength="8">
+            </div>
+
+            <div class="form-group">
+                <label for="tipoUsuario">Tipo de Usuario (Rol)</label>
+                <select id="tipoUsuario" name="tipoUsuario" required>
+                    <option value="" disabled selected>Selecciona un rol</option>
+                    <option value="usuario">Usuario Estándar</option>
+                    <option value="administrador">Administrador</option>
+                    <option value="editor">Editor</option>
+                </select>
+            </div>
+
+            <a href="admin_usuarios.html" class="add-button" ><i class="fas fa-user-plus"></i> Crear Usuario</a>
+        </form>
+    </div>
+</body>
+</html>

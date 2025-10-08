@@ -4,7 +4,7 @@ import {
     obtenerTodosLosTiposDeUsuario, 
     crearTipoUsuario, 
     eliminarTipoDeUsuario 
-} from '../services/tiposUsuarioServer.js'; 
+} from '../services/tiposUsuarioServicio.js'; 
 
 
 const tablaBody = document.querySelector('.data-table-container tbody');

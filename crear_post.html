@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Nuevo Artículo/Post</title>
+    <link rel="stylesheet" href="assets/css/styles.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body style="padding-top: 50px;"> 
+    
+    <div class="admin-content-area" style="padding: 30px; margin: 0 auto; max-width: 600px;">
+        
+        <h1>Crear Nuevo Post</h1>
+        
+        <form id="postForm" class="config-form" action="/api/posts" method="POST">
+
+
+            <div class="form-group">
+                <label for="idAutor">Autor del Post</label>
+                <select id="idAutor" name="idAutor" required>
+                    <option value="" disabled selected>Selecciona un autor</option>
+                    <option value="1">Admin (ID: 1)</option>
+                    <option value="5">Editor Principal (ID: 5)</option>
+                    </select>
+            </div>
+
+            <div class="form-group">
+                <label for="idCategoria">Categoría</label>
+                <select id="idCategoria" name="idCategoria" required>
+                    <option value="" disabled selected>Selecciona una categoría</option>
+                    <option value="1">Tecnología</option>
+                    <option value="2">Deportes</option>
+                    </select>
+            </div>
+
+            <div class="form-group">
+                <label for="titulo">Título del Post</label>
+                <input type="text" id="titulo" name="titulo" required maxlength="150">
+            </div>
+
+            <div class="form-group">
+                <label for="metaDescripcion">Meta Descripción (para SEO)</label>
+                <textarea id="metaDescripcion" name="metaDescripcion" rows="3" maxlength="160" required 
+                    style="width: 100%; max-width: 400px; padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 1em; box-sizing: border-box;"></textarea>
+                <small>Máximo 160 caracteres.</small>
+            </div>
+
+           
+
+            <div class="form-group">
+                <label for="estado">Estado del Post</label>
+                <select id="estado" name="estado" required>
+                    <option value="borrador" selected>Borrador</option>
+                    <option value="revision">En Revisión</option>
+                    <option value="publicado">Publicado</option>
+                    <option value="archivado">Archivado</option>
+                </select>
+            </div>
+
+            <a href="admin_post.html" class="add-button" ><i class="fas fa-user-plus"></i> Crear Post</a>
+        </form>
+    </div>
+</body>
+</html>
