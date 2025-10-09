@@ -78,7 +78,7 @@ if (formularioCrear) {
         if (!nombre) return alert("Por favor, introduce un nombre para la categoría.");
 
         const categoriaData = { 
-            nombre: nombre 
+            nombreCategoria: nombre 
         };
 
         try {

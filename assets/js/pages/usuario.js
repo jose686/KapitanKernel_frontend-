@@ -16,10 +16,11 @@ let usuarioIdEnEdicion = null;
 
 async function renderizarTablaUsuarios() {
     tablaBody.innerHTML = '<tr><td colspan="7">Cargando Usuarios...</td></tr>';
+    console.log("Iniciando carga de usuarios...");
     
     try {
         const usuarios = await listarUsuarios();
-        
+        console.log(usuarios);
         tablaBody.innerHTML = ''; 
         if (usuarios && usuarios.length > 0) {
             usuarios.forEach(usuario => {
@@ -32,15 +33,15 @@ async function renderizarTablaUsuarios() {
                 
             
                 fila.innerHTML = `
-                    <td>${usuario.id}</td>
-                    <td>${usuario.nombre}</td>
-                    <td>${usuario.email}</td>
+                    <td>${usuario.idUsuario}</td>
+                    <td>${usuario.nombreUsuario}</td>
+                    <td>${usuario.correo}</td>
                     <td>${tipo}</td>
-                    <td>${usuario.fechaRegistro || 'N/A'}</td> 
+                    <td>${usuario.fecharegistro || 'N/A'}</td> 
                     <td><span class="status ${estadoClass}">${usuario.estado}</span></td>
                     <td>
-                        <button class="action-btn edit" data-id="${usuario.id}" data-datos='${JSON.stringify(usuario)}'><i class="fas fa-edit"></i></button>
-                        <button class="action-btn delete" data-id="${usuario.id}"><i class="fas ${iconoAccion}"></i></button>
+                        <button class="action-btn edit" data-id="${usuario.idUsuario}" data-datos='${JSON.stringify(usuario)}'><i class="fas fa-edit"></i></button>
+                        <button class="action-btn delete" data-id="${usuario.idUsuario}"><i class="fas fa-trash"></i></button>
                     </td>
                 `;
                 tablaBody.appendChild(fila);
@@ -66,54 +67,6 @@ async function renderizarTablaUsuarios() {
 }
 
 
-if (formularioUsuario) {
-    formularioUsuario.addEventListener('submit', async (e) => {
-        e.preventDefault(); 
-        
-      
-        const inputNombre = document.querySelector('#input-nombre');
-        const inputEmail = document.querySelector('#input-email');
-        const inputPassword = document.querySelector('#input-password');
-        const selectTipoId = document.querySelector('#select-tipo'); 
-
-        const nombre = inputNombre.value.trim();
-        const email = inputEmail.value.trim();
-        const password = inputPassword ? inputPassword.value.trim() : null; 
-        const tipoId = Number(selectTipoId.value);
-        
-        if (!nombre || !email || !tipoId) return alert("Faltan datos obligatorios.");
-        if (!usuarioIdEnEdicion && !password) return alert("La contraseña es obligatoria para un nuevo usuario.");
-
-       
-        const usuarioData = { 
-            nombre: nombre, 
-            email: email, 
-            
-            ...(password && { password: password }),
-            
-            tipoUsuario: { id: tipoId } 
-        };
-
-        try {
-            if (usuarioIdEnEdicion) {
-                
-                await actualizarUsuario(usuarioIdEnEdicion, usuarioData);
-                alert(`Usuario ID ${usuarioIdEnEdicion} actualizado con éxito!`);
-                usuarioIdEnEdicion = null; 
-            } else {
-                
-                await crearUsuario(usuarioData);
-                alert(`Usuario '${nombre}' creado con éxito!`);
-            }
-            
-            formularioUsuario.reset(); 
-            
-            renderizarTablaUsuarios(); 
-        } catch (error) {
-            alert(`Error al guardar: ${error.message}`);
-        }
-    });
-}
 
 
 async function manejarEliminacionDeUsuario(e) {
