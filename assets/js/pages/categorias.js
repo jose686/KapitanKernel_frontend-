@@ -1,7 +1,7 @@
 
 
 import { 
-    listarTodasLasCategorias, 
+    obtenerTodasLasCategorias, 
     crearCategoria, 
     eliminarCategoria,
     
@@ -28,7 +28,7 @@ async function renderizarTablaCategorias() {
     tablaBody.innerHTML = '<tr><td colspan="3">Cargando categorías...</td></tr>';
     
     try {
-        const categorias = await listarTodasLasCategorias();
+        const categorias = await obtenerTodasLasCategorias();
 
         if (categorias && categorias.length > 0) {
             categorias.forEach(categoria => {

@@ -1,3 +1,4 @@
+
 import { BASE_API_URL } from './config.js'; 
 
 const POSTS_API_URL = `${BASE_API_URL}/postsControlador`;
@@ -24,7 +25,7 @@ function construirParametros(idAutor, idsCategorias) {
 
 
 
-export async function crearPost(postData, idAutor, idsCategorias) {
+export async function crearPost(postData) {
     try {
         const parametros = construirParametros(idAutor, idsCategorias);
         const url = `${POSTS_API_URL}?${parametros}`;

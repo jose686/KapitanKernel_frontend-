@@ -1,21 +1,20 @@
 import { BASE_API_URL } from './config.js'; 
 
-const CATEGORIAS_API_URL = `${BASE_API_URL}/categorias`;
+const CATEGORIAS_API_URL = `${BASE_API_URL}/categorias`; 
 
-
-export async function listarTodasLasCategorias() {
+export async function obtenerTodasLasCategorias() {
     try {
         const response = await fetch(CATEGORIAS_API_URL);
-        
+
         if (!response.ok) {
-          
-            throw new Error(`Error ${response.status}: No se pudo obtener la lista de categorias.`);
+           
+            throw new Error(`Error HTTP ${response.status}: No se pudo obtener la lista de categorías.`);
         }
 
         return await response.json();
     } catch (error) {
-        console.error("Error en obtenerTodasLasCategorias:", error);
-        throw error;
+        console.error("Fallo en la llamada a la API de Categorías:", error);
+        throw error; 
     }
 }
 

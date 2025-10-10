@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>IA asistente</title>
+</head>
+<body>
+   <header class="main-header">
+        <div class="logo">TECH CHRONICLE</div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">BLOG</a></li>
+                <li><a href="tienda.html">TIENDA</a></li>
+                <li><a href="admin.html" class="active">ADMIN</a></li>
+            </ul>
+        </nav>
+        
+    </header>
+
+    <div class="admin-container">
+        <aside class="admin-sidebar">
+
+            <div class="user-info">
+                <h4><i class="fas fa-user-circle"></i> Administrador</h4>
+                <p>Bienvenido al Panel</p>
+            </div>
+
+            <div class="admin-nav-links">
+                <ul>
+                    <li><a href="admin.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a href="admin_post.html"><i class="fas fa-pencil-alt"></i> Gestión de Posts</a></li>
+                    <li><a href="admin_productos.html"><i class="fas fa-box"></i> Gestión de Productos</a></li>
+                    <li><a href="admin_usuarios.html"><i class="fas fa-users"></i> Gestión de Usuarios</a></li>
+                    <li><a href="IA.html" class="active"><i class="fa-solid fa-microphone"></i>Asistente IA (Gemini)</a></li>
+                    <li><a href="admin_reportes.html"><i class="fas fa-chart-line"></i> Reportes y Stats</a></li>
+                    <li><a href="admin_configuracion.html"><i class="fas fa-cog"></i> Configuración</a></li>
+                </ul>
+            </div>
+            <button class="logout-btn"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</button>
+        </aside>
+
+        <main class="admin-content-area">
+            <h1>Herramientas Gemini</h1>
+
+            <div class="ai-tools-grid">
+
+                <div class="ai-card">
+                    <h2> Generación de Contenido</h2>
+
+                    <div class="config-form">
+                        <div class="form-group">
+                            <label for="prompt-area">Solicitud (Prompt) a Gemini:</label>
+                            <textarea id="prompt-area" placeholder="Ej: Escribe un borrador de 500 palabras sobre las 5 principales tendencias en ciberseguridad para 2025. Sé persuasivo y usa un lenguaje técnico-formal." required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="tone-select">Tono / Estilo (Opcional):</label>
+                            <select id="tone-select">
+                                <option value="formal">Formal</option>
+                                <option value="divertido">Divertido / Casual</option>
+                                <option value="tecnico">Técnico</option>
+                                <option value="persuasivo">Persuasivo</option>
+                            </select>
+                        </div>
+
+                        <div class="action-buttons">
+                            <button type="button" class="main-action-button">
+                                <i class="fas fa-rocket"></i>  Generar Borrador con Gemini
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="config-form" style="margin-top: 40px;">
+                         <div class="form-group response-area">
+                            <label for="response-area">Respuesta de la IA:</label>
+                            <textarea id="response-area" placeholder="El contenido generado por la IA aparecerá aquí..." readonly></textarea>
+                        </div>
+                        
+                        <div class="action-buttons">
+                            <button type="button" class="secondary-action-button"><i class="fas fa-copy"></i> Copiar Texto</button>
+                            <button type="button" class="download-button"><i class="fas fa-file-alt"></i> Crear Nuevo Post con este Contenido</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <hr>
+
+                <div class="ai-card">
+                    <h2> Narración / Texto a Voz</h2>
+
+                    <div class="config-form">
+                        <div class="form-group">
+                            <label for="narration-text-area">Texto a Narrar:</label>
+                            <textarea id="narration-text-area" placeholder="Introduce el texto que deseas convertir en audio. Puedes copiar aquí el contenido generado en la sección superior."></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div style="display: flex; gap: 20px;">
+                                <div style="flex: 1;">
+                                    <label for="language-select">Idioma:</label>
+                                    <select id="language-select">
+                                        <option value="es-es">Español (España)</option>
+                                        <option value="es-mx">Español (México)</option>
+                                        <option value="en-us">Inglés (EE. UU.)</option>
+                                    </select>
+                                </div>
+                                <div style="flex: 1;">
+                                    <label for="gender-select">Género de la Voz:</label>
+                                    <select id="gender-select">
+                                        <option value="female">Femenino</option>
+                                        <option value="male">Masculino</option>
+                                    </select>
+                                </div>
+                                <div style="flex: 1;">
+                                     <label for="voice-tone-select">Tono de Voz (API):</label>
+                                    <select id="voice-tone-select">
+                                        <option value="standard">Estándar</option>
+                                        <option value="wavenet">WaveNet (Alta calidad)</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="action-buttons">
+                            <button type="button" class="main-action-button">
+                                <i class="fas fa-volume-up"></i> Generar Audio (MP3)
+                            </button>
+                        </div>
+                        
+                        <div class="audio-controls">
+                             <label>Resultado:</label>
+                             <audio id="audio-player" controls style="display: none;">
+                                 <source src="" type="audio/mp3"> 
+                                 Tu navegador no soporta el elemento de audio.
+                             </audio>
+                             <button type="button" class="download-button" style="display: none;"><i class="fas fa-download"></i> Descargar Audio</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+</body>
+</html>
