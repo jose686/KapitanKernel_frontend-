@@ -7,58 +7,98 @@
     <link rel="stylesheet" href="assets/css/styles.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body style="padding-top: 50px;"> 
-    
-    <div class="admin-content-area" style="padding: 30px; margin: 0 auto; max-width: 600px;">
-        
-        <h1>Crear Nuevo Producto</h1>
-        
-        <form id="productoForm" class="config-form" action="/api/productos" method="POST">
+<body> 
 
-            <div class="form-group">
-                <label for="idProducto">ID de Producto</label>
-                <input 
+    <header class="main-header">
+        <div class="logo">TECH CHRONICLE</div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">BLOG</a></li>
+                <li><a href="tienda.html">TIENDA</a></li>
+                <li><a href="admin.html" class="active">ADMIN</a></li>
+            </ul>
+        </nav>
+        <div class="cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count">3</span>
+        </div>
+    </header>
+
+    <main class="admin-container">
+
+        <aside class="admin-sidebar">
+            <div class="user-info">
+                <h4><i class="fas fa-user-circle"></i> Administrador</h4>
+                <p>Bienvenido al Panel</p>
+            </div>
+
+            <nav class="admin-nav-links">
+                <ul>
+                    <li><a href="admin.html" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a href="admin_post.html"><i class="fas fa-pencil-alt"></i> Gestión de Posts</a></li>
+                    <li><a href="admin_productos.html"><i class="fas fa-box"></i> Gestión de Productos</a></li>
+                    <li><a href="admin_usuarios.html"><i class="fas fa-users"></i> Gestión de Usuarios</a></li>
+                    <li><a href="IA.html"><i class="fa-solid fa-microphone"></i>Asistente IA (Gemini)</a></li>
+                    <li><a href="imagenes.html"><i class="fa-solid fa-image"></i>Imagenes</a></li>
+                    <li><a href="admin_reportes.html"><i class="fas fa-chart-line"></i> Reportes y Stats</a></li>
+                    <li><a href="admin_configuracion.html"><i class="fas fa-cog"></i> Configuración</a></li>
+                </ul>
+            </nav>
+
+            <button class="logout-btn"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</button>
+        </aside>
+        
+        <div class="admin-content-area" style="padding: 30px; margin: 0 auto; max-width: 600px;">
+            
+            <h1>Crear Nuevo Producto</h1>
+            
+            <form id="productoForm" class="config-form" action="/api/productos" method="POST">
+                
+                <div class="form-group">
+                    <label for="idProducto">ID de Producto</label>
+                    <input 
                     type="text" 
                     id="idProducto" 
                     name="idProducto" 
                     value="ID generado automáticamente (Referencia)" 
                     readonly 
                     style="background-color: var(--color-light);">
-            </div>
-
-            <div class="form-group">
-                <label for="idCategoria">Categoría del Producto</label>
-                <select id="idCategoria" name="idCategoria" required>
-                    <option value="" disabled selected>Selecciona una categoría</option>
-                    <option value="1">Electrónica</option>
-                    <option value="2">Ropa</option>
-                    <option value="3">Hogar</option>
+                </div>
+                
+                <div class="form-group">
+                    <label for="idCategoria">Categoría del Producto</label>
+                    <select id="idCategoria" name="idCategoria" required>
+                        <option value="" disabled selected>Selecciona una categoría</option>
+                        <option value="1">Electrónica</option>
+                        <option value="2">Ropa</option>
+                        <option value="3">Hogar</option>
                     </select>
-            </div>
-
-            <div class="form-group">
-                <label for="nombre">Nombre del Producto</label>
-                <input type="text" id="nombre" name="nombre" required maxlength="150">
-            </div>
-
-            <div class="form-group">
-                <label for="descripcion">Descripción del Producto</label>
-                <textarea id="descripcion" name="descripcion" rows="5" required 
+                </div>
+                
+                <div class="form-group">
+                    <label for="nombre">Nombre del Producto</label>
+                    <input type="text" id="nombre" name="nombre" required maxlength="150">
+                </div>
+                
+                <div class="form-group">
+                    <label for="descripcion">Descripción del Producto</label>
+                    <textarea id="descripcion" name="descripcion" rows="5" required 
                     style="width: 100%; max-width: 400px; padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 1em; box-sizing: border-box;"></textarea>
-            </div>
-
-            <div class="form-group">
-                <label for="precio">Precio ($)</label>
-                <input type="number" id="precio" name="precio" step="0.01" min="0" required>
-            </div>
-
+                </div>
+                
+                <div class="form-group">
+                    <label for="precio">Precio ($)</label>
+                    <input type="number" id="precio" name="precio" step="0.01" min="0" required>
+                </div>
+                
             <div class="form-group">
                 <label for="stock">Stock (Unidades)</label>
                 <input type="number" id="stock" name="stock" min="0" required>
             </div>
-
+            
             <a href="admin_productos.html" class="add-button" ><i class="fas fa-user-open"></i> Añadir Producto</a>
         </form>
     </div>
+</main>
 </body>
 </html>
