@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <title>App de Noticias - Últimas Noticias</title>
+    <link rel="stylesheet" href="assets/css/styles.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="/assets/css/styles.css"> 
 </head>
 <body>
 
@@ -19,7 +20,8 @@
             </ul>
         </nav>
         <div class="cart-icon">
-            
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count">3</span>
         </div>
     </header>
 
@@ -48,52 +50,34 @@
             <button class="logout-btn"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</button>
         </aside>
 
-        <section class="admin-content-area">
 
-    <h1>Tipos de Usuario</h1>
-    <form action=""  class="config-form">
-        <label>Nombre Tipo</label>
-        <input type="text"  id="nombre-tipo-input">
-        <button class="add-button"><i class="fas fa-plus" type="submit"></i> Crear Tipo</button>
-    </form>
-    
 
-            <div class="data-table-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Nombre</th>
-                            <th>Editar/Eliminar</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>101</td>
-                            <td>El Futuro de la IA</td>
-                            
-                            <td>
-                                <button class="action-btn edit"><i class="fas fa-edit"></i></button>
-                                <button class="action-btn delete"><i class="fas fa-trash"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>102</td>
-                            <td>Ciberseguridad 2024</td>
-                            
-                           <td>
-                                <button class="action-btn edit"><i class="fas fa-edit"></i></button>
-                                <button class="action-btn delete"><i class="fas fa-trash"></i></button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+        <h2>Titulares Principales</h2>
+
+        <section id="noticias-container">
+            
+            <article class="noticia-item">
+                <div class="imagen-placeholder">
+                    
+                </div>
+                <div class="noticia-cuerpo">
+                    <h3 class="noticia-titulo">Inicio dispar de los ex de Osasuna</h3>
+                    <p class="noticia-fecha">Publicado el 12 de Octubre de 2025</p>
+                <p class="noticia-descripcion">Tras una temporada 2024/25 cargada de cambios, varios jugadores de Osasuna han emprendido nuevos retos en distintos clubes de España
+                    y Europa. La temporada 2025/26 comienza a mostrar cómo se están adaptando los rojillos a sus nuevos destinos.
+                    Pablo Ibáñez es el que más destaca y a Bryan al que más le está costando demostrar sus dotes.
+                </p>
+                    <a href="#" class="noticia-enlace" target="_blank">Leer Noticia Completa</a>
+                </div>
+            </article>
+
+            <article class="noticia-item">
+                 </article>
 
         </section>
+
     </main>
 
-
-   <script type="module" src="/assets/js/pages/paginaTiposDeUsuarios.js"></script> 
-</body>
-</html>
+    <footer>
+        <p>&copy; 2025 App de Noticias. Todos los derechos reservados.</p>
+    </footer>
