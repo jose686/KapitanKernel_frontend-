@@ -32,29 +32,68 @@
         <aside class="sidebar-filters">
             <h3>Filtrar por</h3>
 
-            <div class="filter-group">
-                <h4>Categorías <i class="fas fa-chevron-down"></i></h4>
-                <ul>
-                    <li><a href="#">Electrónica</a></li>
-                    <li><a href="#">Software</a></li>
-                    <li><a href="#">Libros</a></li>
-                    <li><a href="#">Gadgets</a></li>
-                    <li><a href="#">Periféricos</a></li>
-                </ul>
+            <div class="filter-group" data-filter-id="categories">
+                <h4 class="filter-header">Categorías <i class="fas fa-chevron-down"></i></h4>
+                <div class="filter-content open"> <label class="filter-option">
+                        <input type="checkbox" name="category" value="electronica">
+                        Electrónica (25)
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" name="category" value="software">
+                        Software (12)
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" name="category" value="libros">
+                        Libros (8)
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" name="category" value="gadgets">
+                        Gadgets (15)
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" name="category" value="perifericos">
+                        Periféricos (30)
+                    </label>
+                </div>
             </div>
 
-            <div class="filter-group">
-                <h4>Precio <i class="fas fa-chevron-down"></i></h4>
-                <div class="price-range-slider">
-                    <div class="slider-track"></div>
-                    <div class="slider-thumb min-thumb"></div>
-                    <div class="slider-thumb max-thumb"></div>
-                    <span class="min-price">10 €</span>
-                    <span class="max-price">500 €</span>
+            <div class="filter-group" data-filter-id="price">
+                <h4 class="filter-header">Precio <i class="fas fa-chevron-down"></i></h4>
+                <div class="filter-content open">
+                    <div class="price-range-slider">
+                        <div class="slider-track"></div>
+                        <div class="slider-thumb min-thumb"></div>
+                        <div class="slider-thumb max-thumb"></div>
+                    </div>
+                    <div class="price-values">
+                        <input type="number" class="min-price-input" value="10" min="0">
+                        <span class="separator">-</span>
+                        <input type="number" class="max-price-input" value="500" max="9999">
+                    </div>
+                </div>
+            </div>
+
+            <div class="filter-group" data-filter-id="brand">
+                <h4 class="filter-header">Marca <i class="fas fa-chevron-down"></i></h4>
+                <div class="filter-content"> <input type="search" placeholder="Buscar Marca..."
+                        class="brand-search-input">
+                    <label class="filter-option">
+                        <input type="checkbox" name="brand" value="techcorp">
+                        TechCorp (12)
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" name="brand" value="cromo">
+                        Cromo Solutions (8)
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" name="brand" value="ultrapro">
+                        UltraPro (5)
+                    </label>
                 </div>
             </div>
 
             <button class="apply-filters-btn">Aplicar Filtros</button>
+            <button class="reset-filters-btn">Restablecer</button>
         </aside>
 
         <section class="products-grid-section">
@@ -65,7 +104,7 @@
                     <h3>Laptop Ultra Pro Z</h3>
                     <p class="description">Portátil de alto rendimiento para gaming y diseño gráfico.</p>
                     <div class="price">450.99 €</div>
-                    <button class="add-to-cart-btn">Añadir al Carrito</button>
+                    <button  type="submit" class="add-to-cart-btn"><a class="add-to-cart-btn" href="detalles.html">Añadir al Carrito</a></button>
                 </article>
 
                 <article class="product-card">
@@ -73,7 +112,7 @@
                     <h3>Auriculares Inalámbricos X5</h3>
                     <p class="description">Sonido cristalino y cancelación de ruido activa.</p>
                     <div class="price">47.99 €</div>
-                    <button class="add-to-cart-btn">Añadir al Carrito</button>
+                    <button  type="submit" class="add-to-cart-btn"><a class="add-to-cart-btn" href="detalles.html">Añadir al Carrito</a></button>
                 </article>
 
                 <article class="product-card">
@@ -81,7 +120,7 @@
                     <h3>Programación Avanzada (Libro)</h3>
                     <p class="description">Guía completa para desarrolladores experimentados.</p>
                     <div class="price">15.99 €</div>
-                    <button class="add-to-cart-btn">Añadir al Carrito</button>
+                    <button  type="submit" class="add-to-cart-btn"><a class="add-to-cart-btn" href="detalles.html">Añadir al Carrito</a></button>
                 </article>
 
                 <article class="product-card">
@@ -89,7 +128,7 @@
                     <h3>Smartwatch Cromo Plus</h3>
                     <p class="description">Monitor de salud, GPS y batería de larga duración.</p>
                     <div class="price">149.99 €</div>
-                    <button class="add-to-cart-btn">Añadir al Carrito</button>
+                    <button  type="submit" class="add-to-cart-btn"><a class="add-to-cart-btn" href="detalles.html">Añadir al Carrito</a></button>
                 </article>
 
                 <article class="product-card">
@@ -97,7 +136,7 @@
                     <h3>Teclado Mecánico RGB</h3>
                     <p class="description">Switches táctiles para máxima precisión.</p>
                     <div class="price">210.99 €</div>
-                    <button class="add-to-cart-btn">Añadir al Carrito</button>
+                    <button  type="submit" class="add-to-cart-btn"><a class="add-to-cart-btn" href="detalles.html">Añadir al Carrito</a></button>
                 </article>
 
                 <article class="product-card">
@@ -105,7 +144,7 @@
                     <h3>Ratón Ergonómico Pro</h3>
                     <p class="description">DPI ajustable para profesionales.</p>
                     <div class="price">50.00 €</div>
-                    <button class="add-to-cart-btn">Añadir al Carrito</button>
+                    <button  type="submit" class="add-to-cart-btn"><a class="add-to-cart-btn" href="detalles.html">Añadir al Carrito</a></button>
                 </article>
 
             </div>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras | Tech Chronicle</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+
+    <header class="main-header">
+        </header>
+
+    <main class="cart-page-container">
+        
+        <div class="cart-header">
+            <h1>Cesta de la compra</h1>
+            <span class="price-header-label">Precio</span> 
+        </div>
+
+        <div class="cart-content-grid">
+
+            <section class="cart-items-section">
+                
+                <article class="cart-item">
+                    <img src="/assets/img/OIP (3).webp" alt="Laptop Pro" class="item-image">
+                    <div class="item-details">
+                        <p class="item-title">Laptop Ultra Pro Z</p>
+                        <p class="item-in-stock">En stock</p>
+                        <p class="item-seller">Vendido por: TechChronicle</p>
+                        <div class="item-actions">
+                            <select class="item-quantity">
+                                <option value="1">Cant.: 1</option>
+                                <option value="2">Cant.: 2</option>
+                                <option value="3">Cant.: 3</option>
+                            </select>
+                            <span class="action-separator">|</span>
+                            <button class="action-btn-text">Eliminar</button>
+                            <span class="action-separator">|</span>
+                            <button class="action-btn-text">Guardar para más tarde</button>
+                        </div>
+                    </div>
+                    <div class="item-price">
+                        450,99 €
+                    </div>
+                </article>
+                
+                <hr class="cart-divider">
+
+                <article class="cart-item">
+                    <img src="/assets/img/descargar.webp" alt="Auriculares Inalámbricos" class="item-image">
+                    <div class="item-details">
+                        <p class="item-title">Auriculares Inalámbricos X5</p>
+                        <p class="item-in-stock item-low-stock">Stock bajo</p>
+                        <p class="item-seller">Vendido por: Periféricos S.L.</p>
+                        <div class="item-actions">
+                            <select class="item-quantity">
+                                <option value="1">Cant.: 1</option>
+                                <option value="2">Cant.: 2</option>
+                            </select>
+                            <span class="action-separator">|</span>
+                            <button class="action-btn-text">Eliminar</button>
+                            <span class="action-separator">|</span>
+                            <button class="action-btn-text">Guardar para más tarde</button>
+                        </div>
+                    </div>
+                    <div class="item-price">
+                        47,99 €
+                    </div>
+                </article>
+
+                <div class="cart-subtotal-line">
+                    Subtotal (3 productos): <span class="subtotal-amount">498,98 €</span>
+                </div>
+            </section>
+            
+            <aside class="order-summary-section">
+                
+                <div class="order-subtotal">
+                    <i class="fas fa-check-circle check-icon"></i>
+                    <p class="subtotal-message">
+                        El pedido cumple los requisitos para envío GRATIS.
+                    </p>
+                    <p>Subtotal (3 productos): <span class="subtotal-amount">498,98 €</span></p>
+                </div>
+
+                <button class="proceed-to-checkout-btn">
+                    Tramitar pedido
+                </button>
+                
+                <div class="checkout-options">
+                    <hr>
+                    <button class="option-btn">Pagar con PayPal</button>
+                    <button class="option-btn">Pagar con Tarjeta</button>
+                </div>
+
+            </aside>
+
+        </div>
+    </main>
+
+    </body>
+</html>
