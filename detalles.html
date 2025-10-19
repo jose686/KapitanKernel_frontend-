@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="assets/css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <title>Detalles</title>
+    <title>Detalles del Producto</title>
 </head>
 
 <body>
@@ -28,7 +28,28 @@
     </header>
    <main class="admin-container">
 
-        
+        <aside class="admin-sidebar">
+                <div class="user-info">
+                    <h4><i class="fas fa-user-circle"></i> Administrador</h4>
+                    <p>Bienvenido al Panel</p>
+                </div>
+
+                <nav class="admin-nav-links">
+                    <ul>
+                        <li><a href="admin.html" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                        <li><a href="admin_post.html"><i class="fas fa-pencil-alt"></i> Gestión de Posts</a></li>
+                        <li><a href="admin_productos.html"><i class="fas fa-box"></i> Gestión de Productos</a></li>
+                        <li><a href="admin_usuarios.html"><i class="fas fa-users"></i> Gestión de Usuarios</a></li>
+                        <li><a href="IA.html"><i class="fa-solid fa-microphone"></i>Asistente IA (Gemini)</a></li>
+                        <li><a href="imagenes.html"><i class="fa-solid fa-image"></i>Imagenes</a></li>
+                        <li><a href="noticias.html"><i class="fa-solid fa-image"></i>Noticias</a></li>
+                        <li><a href="admin_reportes.html"><i class="fas fa-chart-line"></i> Reportes y Stats</a></li>
+                        <li><a href="admin_configuracion.html"><i class="fas fa-cog"></i> Configuración</a></li>
+                    </ul>
+                </nav>
+
+                <button class="logout-btn"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</button>
+        </aside>
 
     
 
@@ -37,11 +58,9 @@
        
         <section class="product-main-content">
 
-            
-
             <div class="product-gallery">
                 <div class="main-image">
-                    <img src="/assets/img/OIP (3).webp" alt="Laptop Ultra Pro Z - Principal">
+                    <img id="main-product-image" src="" alt="Imagen Principal del Producto">
                 </div>
                 <div class="thumbnails-grid">
                     <img src="/assets/img/Laptop-Ultra-Pro-Z-1.webp" alt="Vista lateral" class="thumbnail active">
@@ -52,7 +71,7 @@
             </div>
 
             <div class="product-description-area">
-                <h1 class="product-title">Laptop Ultra Pro Z (16GB RAM, 512GB SSD)</h1>
+                <h1 id="product-title" class="product-title"></h1>
 
                 <div class="rating-bar">
                     <i class="fas fa-star filled"></i>
@@ -62,16 +81,13 @@
                     <i class="fas fa-star-half-alt filled"></i>
                     <span class="rating-text">(1,254 valoraciones)</span>
                 </div>
-
+                
                 <div class="product-specs">
-                    <h2 class="specs-title">Características Destacadas</h2>
-                    <ul>
-                        <li><i class="fas fa-microchip spec-icon"></i> Procesador Intel i7 de 13ª Gen.</li>
-                        <li><i class="fas fa-memory spec-icon"></i> 16 GB de RAM DDR5 (Expandible)</li>
-                        <li><i class="fas fa-hdd spec-icon"></i> 512 GB SSD NVMe ultra rápido</li>
-                        <li><i class="fas fa-desktop spec-icon"></i> Pantalla OLED 15.6" 120Hz</li>
-                        <li><i class="fas fa-wifi spec-icon"></i> Wi-Fi 6E y Bluetooth 5.3</li>
-                    </ul>
+                    <h2 class="specs-title">Categoría</h2>
+                    <p id="product-category"></p> 
+                    <h2 class="specs-title">Stock y Peso</h2>
+                    <ul id="product-stock-peso">
+                        </ul>
                 </div>
 
                 <div class="model-selector-group">
@@ -97,23 +113,21 @@
 
                 <div class="detailed-description">
                     <h2 class="description-title">Descripción Completa</h2>
-                    <p>La Laptop Ultra Pro Z redefine el rendimiento. Su chasis de aluminio pulido alberga la última
-                        tecnología en procesamiento, ofreciendo una experiencia fluida tanto para juegos intensivos como
-                        para tareas de diseño gráfico profesional. Disfruta de la mejor calidad de color en su vibrante
-                        pantalla OLED. Incluye licencia de Windows 11 Pro.</p>
+                    <p id="product-long-description">
+                        </p>
+                    <h2 class="description-title">SKU del Mayorista</h2>
+                    <p id="product-sku-id"></p>
                 </div>
             </div>
 
             <aside class="purchase-panel">
                 <div class="price-box">
                     <span class="label">Precio:</span>
-                    <span class="current-price">450,99 €</span>
+                    <span id="product-price" class="current-price"></span>
                 </div>
 
-                <div class="stock-info in-stock">
-                    <i class="fas fa-check-circle"></i>
-                    <span>En stock.</span>
-                </div>
+                <div id="stock-status" class="stock-info">
+                    </div>
 
                 <div class="shipping-info">
                     Envío GRATIS mañana.
@@ -145,6 +159,6 @@
         </section>
     </main>
 
+    <script src="assets/js/pages/productoDetalle.js"></script>
 </body>
-
 </html>
