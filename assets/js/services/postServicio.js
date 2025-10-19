@@ -27,30 +27,36 @@ function construirParametros(idAutor, idsCategorias) {
 
 export async function crearPost(postData) {
     try {
-        const parametros = construirParametros(idAutor, idsCategorias);
-        const url = `${POSTS_API_URL}?${parametros}`;
+        
+        const url = POSTS_API_URL;
         
         const response = await fetch(url, {
             method: 'POST',
+            // CRÍTICO: El servidor espera un JSON
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(postData), 
+            body: JSON.stringify(postData), // Toda la data va aquí
         });
 
-        if (response.status === 404) { 
-            throw new Error("El autor o alguna de las categorías especificadas no fue encontrado.");
-        }
-        
         if (!response.ok) {
-            throw new Error(`Error ${response.status}: No se pudo crear el Post.`);
+            // Lee el texto del error de Spring Boot para un diagnóstico más claro
+            const errorText = await response.text();
+            console.error("Respuesta detallada del servidor:", errorText); 
+            
+            // Si el estado es 404, es por claves foráneas no encontradas (autor/categoría)
+            if (response.status === 404) { 
+                throw new Error("El autor o alguna de las categorías especificadas no fue encontrado (404).");
+            }
+            
+            // Para cualquier otro error, usamos el mensaje genérico
+            throw new Error(`Error ${response.status}: No se pudo crear el Post. Mensaje: ${errorText.substring(0, 50)}...`);
         }
 
         return await response.json(); 
     } catch (error) {
-        console.error("Error en crearPost:", error);
+        console.error("Error en postServicio crearPost:", error);
         throw error;
     }
 }
-
 
 export async function actualizarPost(id, postActualizadoData, idAutor, idsCategorias) {
     try {
@@ -102,15 +108,24 @@ export async function eliminarPost(id) {
 }
 
 
+
+
 export async function listarTodosLosPosts() {
     try {
-        const response = await fetch(POSTS_API_URL);
+        const url = POSTS_API_URL;
         
+        const response = await fetch(url, {
+            method: 'GET',
+            headers: { 
+                'Content-Type': 'application/json' 
+            }
+        });
+
         if (!response.ok) {
             throw new Error(`Error ${response.status}: No se pudo obtener la lista de Posts.`);
         }
 
-        return await response.json();
+        return await response.json(); 
     } catch (error) {
         console.error("Error en listarTodosLosPosts:", error);
         throw error;
