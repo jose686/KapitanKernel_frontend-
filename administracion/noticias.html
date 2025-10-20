@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App de Noticias - Últimas Noticias</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/styles.css"> 
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="logo">TECH CHRONICLE</div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">BLOG</a></li>
+                <li><a href="tienda.html">TIENDA</a></li>
+                <li><a href="admin.html" class="active">ADMIN</a></li>
+            </ul>
+        </nav>
+        <div class="cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count">3</span>
+        </div>
+    </header>
+
+    <main class="admin-container">
+
+        <aside class="admin-sidebar">
+            <div class="user-info">
+                <h4><i class="fas fa-user-circle"></i> Administrador</h4>
+                <p>Bienvenido al Panel</p>
+            </div>
+
+            <nav class="admin-nav-links">
+                <ul>
+                    <li><a href="../admin.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a href="admin_post.html"><i class="fas fa-pencil-alt"></i> Gestión de Posts</a></li>
+                    <li><a href="admin_productos.html"><i class="fas fa-box"></i> Gestión de Productos</a></li>
+                    <li><a href="admin_usuarios.html"><i class="fas fa-users"></i> Gestión de Usuarios</a></li>
+                    <li><a href="IA.html"><i class="fa-solid fa-microphone"></i>Asistente IA (Gemini)</a></li>
+                    <li><a href="imagenes.html"><i class="fa-solid fa-image"></i>Imagenes</a></li>
+                    <li><a href="noticias.html"><i class="fa-solid fa-newspaper"></i>Noticias</a></li>
+                    <li><a href="admin_reportes.html"><i class="fas fa-chart-line"></i> Reportes y Stats</a></li>
+                    <li><a href="admin_configuracion.html"><i class="fas fa-cog"></i> Configuración</a></li>
+                </ul>
+            </nav>
+
+            <button class="logout-btn"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</button>
+        </aside>
+
+
+
+        <h2>Titulares Principales</h2>
+
+        <section id="noticias-container">
+            
+            <article class="noticia-item">
+                <div class="imagen-placeholder">
+                    
+                </div>
+                <div class="noticia-cuerpo">
+                    <h3 class="noticia-titulo">Inicio dispar de los ex de Osasuna</h3>
+                    <p class="noticia-fecha">Publicado el 12 de Octubre de 2025</p>
+                <p class="noticia-descripcion">Tras una temporada 2024/25 cargada de cambios, varios jugadores de Osasuna han emprendido nuevos retos en distintos clubes de España
+                    y Europa. La temporada 2025/26 comienza a mostrar cómo se están adaptando los rojillos a sus nuevos destinos.
+                    Pablo Ibáñez es el que más destaca y a Bryan al que más le está costando demostrar sus dotes.
+                </p>
+                    <a href="#" class="noticia-enlace" target="_blank">Leer Noticia Completa</a>
+                </div>
+            </article>
+
+            <article class="noticia-item">
+                 </article>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 App de Noticias. Todos los derechos reservados.</p>
+    </footer>

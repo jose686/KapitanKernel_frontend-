@@ -42,12 +42,16 @@ section {
 
 
 .main-header {
+    width: 100%;
+    position: relative;
     background-color: var(--color-dark);
     color: var(--color-text-light);
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 50px;
+    margin-left:0;
+    z-index: 50;
 }
 
 .logo {
@@ -477,21 +481,29 @@ section {
 
 .admin-container {
     display: flex;
-    min-height: calc(100vh - 80px);
+    
+    min-height: 100vh; 
     background-color: var(--color-light);
 }
 
 .admin-sidebar {
-    flex: 0 0 250px;
+    position: fixed; 
+    top: 0;           
+    left: 0;          
+    width: 250px;
+    height: 100vh;
+    z-index: 100;
+
     background-color: var(--color-dark);
     color: var(--color-text-light);
-    padding: 20px 0;
+    
+    
+    padding: 60px 0 20px 0; 
+    
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-}
-
-.user-info {
+}ser-info {
     padding: 0 20px 20px 20px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     margin-bottom: 20px;
@@ -510,6 +522,7 @@ section {
 
 .admin-nav-links ul {
     list-style: none;
+   
 }
 
 .admin-nav-links ul li a {
@@ -552,6 +565,9 @@ section {
     flex-grow: 1;
     padding: 30px;
     background-color: var(--color-light);
+    
+    
+    margin-left: 250px; 
 }
 
 .admin-content-area h1 {
@@ -674,6 +690,14 @@ section {
     .admin-sidebar {
         flex: 0 0 200px;
     }
+
+    .admin-content-area {
+        margin-left: 200px;
+    }
+
+    .main-header {
+        margin-left: 200px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -682,6 +706,7 @@ section {
         flex-direction: row;
         justify-content: space-around;
         padding: 15px 10px;
+        margin-left: 0;
     }
 
     .main-nav {
@@ -698,8 +723,11 @@ section {
     }
 
     .admin-sidebar {
+        
+        position: static; 
         flex: auto;
         width: 100%;
+        height: auto;
         padding-bottom: 0;
     }
 
@@ -718,6 +746,11 @@ section {
 
     .admin-nav-links ul li a i {
         display: none;
+    }
+
+    .admin-content-area {
+        margin-left: 0; 
+        flex: auto;
     }
 
     .logout-btn {
@@ -1780,4 +1813,75 @@ table tbody tr:hover {
     .product-description-area {
         order: 3;
     }
+}
+
+
+
+.login-page {
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--color-light); 
+}
+
+.login-box {
+   
+    background-color: var(--color-card-light);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.login-box h2 {
+    margin-bottom: 25px;
+    font-size: 2em;
+    color: var(--color-text-dark);
+    text-align: center;
+}
+
+.form-group {
+   
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--color-text-dark);
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1em;
+    
+    box-sizing: border-box; 
+}
+
+
+.login-button {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--color-accent); 
+    color: var(--color-text-light);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 700;
+    transition: background-color 0.3s;
+}
+
+.login-button:hover {
+  
+    background-color: #0056b3; 
 }

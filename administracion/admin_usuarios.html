@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <title>Admin - Gestión de Usuarios</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <title>Document</title>
 </head>
 <body>
-
     <header class="main-header">
         <div class="logo">TECH CHRONICLE</div>
         <nav class="main-nav">
@@ -19,43 +19,42 @@
             </ul>
         </nav>
         <div class="cart-icon">
-            
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count">3</span>
         </div>
     </header>
 
     <main class="admin-container">
-
         <aside class="admin-sidebar">
             <div class="user-info">
                 <h4><i class="fas fa-user-circle"></i> Administrador</h4>
                 <p>Bienvenido al Panel</p>
             </div>
-
+            
             <nav class="admin-nav-links">
                 <ul>
-                    <li><a href="admin.html" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a href="../admin.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
                     <li><a href="admin_post.html"><i class="fas fa-pencil-alt"></i> Gestión de Posts</a></li>
                     <li><a href="admin_productos.html"><i class="fas fa-box"></i> Gestión de Productos</a></li>
-                    <li><a href="admin_usuarios.html"><i class="fas fa-users"></i> Gestión de Usuarios</a></li>
+                    <li><a href="admin_usuarios.html" class="active"><i class="fas fa-users"></i> Gestión de Usuarios</a></li>
                     <li><a href="IA.html"><i class="fa-solid fa-microphone"></i>Asistente IA (Gemini)</a></li>
                     <li><a href="imagenes.html"><i class="fa-solid fa-image"></i>Imagenes</a></li>
-                    <li><a href="noticias.html"><i class="fa-solid fa-newspaper"></i>Noticias</a></li>
+                    <li><a href="noticias.html"><i class="fa-solid fa-image"></i>Noticias</a></li>
                     <li><a href="admin_reportes.html"><i class="fas fa-chart-line"></i> Reportes y Stats</a></li>
                     <li><a href="admin_configuracion.html"><i class="fas fa-cog"></i> Configuración</a></li>
                 </ul>
             </nav>
-
             <button class="logout-btn"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</button>
         </aside>
 
         <section class="admin-content-area">
-            <h1>Categorias</h1>
-            <form action=""class="config-form">     
-                <label for="nombreCategoria">Categoria</label>
-                <input type="text" id="nombreCategoria">  
-                <button class="add-button" type="submit"><i class="fas fa-plus"></i> Crear Categoria</button> 
-            </form
-    
+            <h1>Gestión de Usuarios</h1>
+            
+            <div class="content-actions">
+                <a href="crear_usuario.html" class="add-button" ><i class="fas fa-user-plus"></i> Crear Nuevo Usuario</a>
+                <a href="tipos_usuarios.html" class="add-button" ><i class="fas fa-user-plus"></i> Crear Tipo Usuario</a>
+                <input type="text" placeholder="Buscar usuario por email..." class="search-input">
+            </div>
 
             <div class="data-table-container">
                 <table>
@@ -63,26 +62,36 @@
                         <tr>
                             <th>ID</th>
                             <th>Nombre</th>
-                            <th>Editar/Eliminar</th>
+                            <th>Email</th>
+                            <th>Rol</th>
+                            <th>Registro</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>101</td>
-                            <td>El Futuro de la IA</td>
-                            
+                            <td>1</td>
+                            <td>Javier Pérez</td>
+                            <td>javier.p@mail.com</td>
+                            <td>Admin</td>
+                            <td>01/01/2023</td>
+                            <td><span class="status ready">Activo</span></td>
                             <td>
                                 <button class="action-btn edit"><i class="fas fa-edit"></i></button>
-                                <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+                                <button class="action-btn delete"><i class="fas fa-lock"></i></button>
                             </td>
                         </tr>
                         <tr>
-                            <td>102</td>
-                            <td>Ciberseguridad 2024</td>
-                            
-                           <td>
+                            <td>2</td>
+                            <td>Ana Martínez</td>
+                            <td>ana.m@mail.com</td>
+                            <td>Cliente</td>
+                            <td>15/05/2024</td>
+                            <td><span class="status pending">Inactivo</span></td>
+                            <td>
                                 <button class="action-btn edit"><i class="fas fa-edit"></i></button>
-                                <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+                                <button class="action-btn delete" ><i class="fas fa-lock-open"></i></button>
                             </td>
                         </tr>
                     </tbody>
@@ -91,8 +100,6 @@
 
         </section>
     </main>
-
-    <script  type="module" src="/assets/js/pages/categorias.js"></script>
-  
+    <script  type="module" src="/assets/js/pages/usuario.js"></script>
 </body>
 </html>
